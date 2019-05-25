@@ -5,7 +5,7 @@ plugins {
     id 'maven'
     id 'groovy'
     id 'idea'
-    id 'org.ajoberstar.grgit' version '2.2.0-rc.1'
+    id 'org.ajoberstar.grgit' version '3.1.1'
 }
 
 group = 'de.benjitrapp.solid-coding-dojo'
@@ -116,25 +116,25 @@ task getSolution(type: Task) {
 
 dependencies {
     implementation (
-            'org.slf4j:slf4j-api:1.7.25',
-            'org.slf4j:slf4j-log4j12:1.7.25',
+            'org.slf4j:slf4j-api:1.7.26',
+            'org.slf4j:slf4j-log4j12:1.7.26',
             'log4j:log4j:1.2.17',
-            'org.codehaus.groovy:groovy-all:2.4.10'
+            'org.codehaus.groovy:groovy-all:2.5.7'
     )
 
-    testImplementation('com.athaydes:spock-reports:1.3.1') {
+    testImplementation('com.athaydes:spock-reports:1.6.2') {
         transitive = false // this avoids affecting your version of Groovy/Spock
     }
 
 
     testImplementation(
             'junit:junit:4.12',
-            'org.spockframework:spock-core:1.1-groovy-2.4',
+            'org.spockframework:spock-core:1.2-groovy-2.5',
             'org.hamcrest:hamcrest-all:1.3'
     )
 
     testRuntimeOnly(
-            'net.bytebuddy:byte-buddy:1.6.5',
-            'org.objenesis:objenesis:2.5.1'
+            'net.bytebuddy:byte-buddy:1.9.12',
+            'org.objenesis:objenesis:3.0.1'
     )
 }
